@@ -26,10 +26,10 @@ You can contact me for collaborations ideas at https://glukicov.github.io/
 - [ ] Analyse historical trends in my cycling data ("Plot of average cadence per week over the last year")
   - [ ] Use Strava data locally
   - [ ] Upload and process Stava on the cloud (GCS/Dataflow)
--[ ] Dashboards with all trends
+- [ ] Dashboards with all trends
   - [ ] Sync/hook to Strava 
--[ ] Cycling coach to suggest exercises to improve the trends
--[ ] Dietitian to suggest nutrition plans 
+- [ ] Cycling coach to suggest exercises to improve the trends
+- [ ] Dietitian to suggest nutrition plans 
 
 # Engineering backlog
 - [ ] Add [Pkl](https://pkl-lang.org/blog/introducing-pkl.html) for config validation 
