@@ -1,6 +1,7 @@
 import requests
 import json
 import argparse
+import yaml
 
 from loguru import logger
 
@@ -9,31 +10,30 @@ parser = argparse.ArgumentParser(description="Send a query to the chat completio
 parser.add_argument("--question", type=str, required=True, help="The question to ask.")
 args = parser.parse_args()
 
-BASE_URL = "http://localhost:1234"
-API_ENDPOINT = "/v1/chat/completions"
-headers = {"Content-Type": "application/json"}
-ai_content = """
-You are a friendly cycling coach.
-You always provide well-reasoned answers that are both correct and helpful.
-"""
-temperature = 0.7
-max_tokens = -1
-stream = False
+config = yaml.safe_load(open("config.yaml"))
+
+HEADERS = {"Content-Type": "application/json"}
+BASE_URL = config['base_url']
+API_ENDPOINT = config['api_endpoint']
+CONTENT = config['content']
+TEMPERATURE = config['temperature']
+MAX_TOKENS = config['max_tokens']
+STREAM = config['stream']
 
 
 def generate_response(request: str) -> str:
     request_data = {
         "messages": [
-            {"role": "system", "content": ai_content},
+            {"role": "system", "content": CONTENT},
             {"role": "user", "content": request},
         ],
-        "temperature": temperature,
-        "max_tokens": max_tokens,
-        "stream": stream,
+        "temperature": TEMPERATURE,
+        "max_tokens": MAX_TOKENS,
+        "stream": STREAM,
     }
 
     json_string = json.dumps(request_data)
-    response = requests.post(f"{BASE_URL}{API_ENDPOINT}", headers=headers, data=json_string)
+    response = requests.post(f"{BASE_URL}{API_ENDPOINT}", headers=HEADERS, data=json_string)
     if response.status_code == 200:
         response_data = response.json()
         for message in response_data["choices"]:
