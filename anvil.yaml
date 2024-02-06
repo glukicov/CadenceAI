@@ -1,9 +1,14 @@
-allow_embedding: false
+dependencies: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
 package_name: M3_App_1
-name: M3 App 1
-startup_form: Form1
-renamed: true
+allow_embedding: false
+name: CadenceAI
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
   server_spec: null}
-dependencies: []
-services: []
+metadata: {title: CadenceAI, description: 'Your all-in-one AI-powered cycling coach,
+    mechanic, analyst and dietitian', logo_img: 'asset:image.png'}
+startup_form: Form1
+renamed: true
