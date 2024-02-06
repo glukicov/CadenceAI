@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "cadenceai"
+version = "0.1.0"
+description = "Your all-in-one AI-powered cycling coach, mechanic, analyst and dietitian"
+authors = ["Gleb Lukicov <https://glukicov.github.io>"]
+license = "GNU"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+openai = "^1.11.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

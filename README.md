@@ -4,7 +4,7 @@
 <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue">
 </p>
 
-Your all-in-one AI-powered cycling coach, mechanic, analyst and dietitian https://github.com/glukicov/CadenceAI
+Your all-in-one AI-powered cycling coach, mechanic, analyst and dietitian
 # Features backlog
 - Maintenance instructions ("How of often should I change my chain?")
 - Bike component identifier (helps during repairs: "What is that part? Oh, it's called bottom bracket!")
