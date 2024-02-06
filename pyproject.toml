@@ -5,11 +5,15 @@ description = "Your all-in-one AI-powered cycling coach, mechanic, analyst and d
 authors = ["Gleb Lukicov <https://glukicov.github.io>"]
 license = "GNU"
 readme = "README.md"
+packages = [{ include = "server_code" }, { include = "client_code" }]
 
 [tool.poetry.dependencies]
 python = "^3.10"
 openai = "^1.11.1"
 requests = "^2.31.0"
+anvil = "^0.0.2"
+anvil-app-server = "^1.10.1"
+loguru = "^0.7.2"
 
 
 [build-system]

@@ -5,7 +5,13 @@
 </p>
 
 Your all-in-one AI-powered cycling coach, mechanic, analyst and dietitian
+
+# Contact 
+You can contact me for collaborations ideas at https://glukicov.github.io/
+
 # Features backlog
+- [ ] Anvil BE <-> FE pretty form app with text submission and response display 
+- [ ] Deploy Zephyr into public Cloud Run instance with auth
 - [ ] Maintenance instructions ("How of often should I change my chain?")
   - [ ] Bike component identifier (helps during repairs: "What is this part? [insert image] Oh, it's called bottom bracket!")
     - [ ] Use RAG with database of common components

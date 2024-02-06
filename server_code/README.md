@@ -8,7 +8,7 @@ A local server with https://lmstudio.ai/ and a local LLM at http://localhost:123
 ## Testing 
 Start LM Studio and start a local server at http://localhost:1234 
 ```shell
-python server_code/dev/send_llm_query.py --question="How often should I change my chain?"
+python server_code/send_llm_query.py --question="How often should I change my chain?"
 ```
 Should give a response like
 ```text
