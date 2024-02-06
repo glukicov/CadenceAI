@@ -6,7 +6,7 @@
 
 Your all-in-one AI-powered cycling coach, mechanic, analyst and dietitian
 # Features backlog
-- [] Maintenance instructions ("How of often should I change my chain?")
+* [] Maintenance instructions ("How of often should I change my chain?")
 - [] Bike component identifier (helps during repairs: "What is that part? Oh, it's called bottom bracket!")
   - [] Can use RAG with database of common component
 - [] Price estimation ("How much would a new chain cost for my bike?")
