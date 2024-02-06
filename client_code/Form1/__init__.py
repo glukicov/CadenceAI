@@ -13,6 +13,5 @@ class Form1(Form1Template):
         description = anvil.server.call('generate_response', user_input)
         self.rich_text_2.content = description
 
-
-def text_box_1_pressed_enter(self, **event_args):
-    pass
+    def text_box_1_pressed_enter(self, **event_args):
+        pass
