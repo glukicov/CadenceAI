@@ -48,7 +48,7 @@ def validate_request(request_data: dict) -> Response:
             validate_request(request_data=data)
 
             if model is None:
-                model = Llama(model_path=MODEL_PATH)
+                model = Llama(model_path=MODEL_PATH, n_gpu_layers=TODO)
 
             prompt = create_llama_prompt(content=data['messages'][0]['content'],
                                          user_msg=data['messages'][1]['content'])

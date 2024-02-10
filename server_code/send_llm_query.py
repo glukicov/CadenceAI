@@ -23,7 +23,7 @@ STREAM = config['stream']
 
 
 def local_model_response(request: str) -> str:
-    model = Llama(model_path=MODEL_PATH)
+    model = Llama(model_path=MODEL_PATH, n_gpu_layers=8)
     prompt = create_llama_prompt(content=CONTENT, user_msg=request)
     output = model(prompt=prompt, temperature=TEMPERATURE, max_tokens=MAX_TOKENS, stream=STREAM)
     return output

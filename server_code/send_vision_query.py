@@ -1,12 +1,10 @@
 import pathlib
-
 import yaml
-
-import vertexai.preview.generative_models as generative_models
 
 from typing import List
 from loguru import logger
 from vertexai.preview.generative_models import GenerativeModel, Part
+import vertexai.preview.generative_models as generative_models
 
 config = yaml.safe_load(open("config.yaml"))
 VISION_MODEL = config["vision_model"]
