@@ -18,6 +18,7 @@ model = None
 
 
 def create_llama_prompt(content: str, user_msg: str) -> str:
+    """Return system and user messages in Llama prompt format."""
     return f"""
     <s>[INST] <<SYS>>
     {content}
