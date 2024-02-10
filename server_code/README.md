@@ -1,12 +1,21 @@
-# Development 
-## Server 
-A local server with https://lmstudio.ai/ and a local LLM at http://localhost:1234 
+# Backend development 
 
 ## Model
-`Zephyr 7B β` https://huggingface.co/HuggingFaceH4/zephyr-7b-beta
+`Zephyr 7B β` (Llama-type) https://huggingface.co/HuggingFaceH4/zephyr-7b-beta
+- fine-tuned from `Mistral 7B`
+`llama-2–7b-chat` https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF
+- GPT-like
+- designed to function as an assistant
+- 4 bit quantisation available (~4 GB RAM at inference) 
+- "acceptable" quality for a PoC
 
-## Testing 
-Start LM Studio and start a local server at http://localhost:1234 
+## Local testing 
+Inference on a GGUF model file on disk 
+```shell
+python server_code/send_llm_query.py --question="How often should I change my chain?" --local_model
+```
+
+Open [LM Studio](https://lmstudio.ai/) app, load the model and start a local server at http://localhost:1234 
 ```shell
 python server_code/send_llm_query.py --question="How often should I change my chain?"
 ```
@@ -16,4 +25,6 @@ As a general guideline, you should replace your bike chain every 2,000 to 3,000 
 ```
 
 # Deployment
-- FE: https://anvil.works/docs/how-to/app-server/cloud-deployment-guides/google-cloud-app-server-deployment
+
+## HuggingFace
+

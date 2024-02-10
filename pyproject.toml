@@ -14,6 +14,8 @@ requests = "^2.31.0"
 anvil = "^0.0.2"
 anvil-app-server = "^1.10.1"
 loguru = "^0.7.2"
+llama-cpp-python = "^0.2.39"
+flask = "^3.0.2"
 
 
 [build-system]

@@ -16,11 +16,11 @@ You can contact me for collaborations ideas at https://glukicov.github.io/
 - [ ] Feature 1: General Q&A ("How of often should I change my chain?")
 - [ ] FE: Deploy Anvil app to Compute Engine 
 - [ ] Test e2e mobile usability and get early feedback   
+- [ ] Multimodality (GeminiPro Vision API call) Bike component identifier (helps during repairs: "What is this part? [insert image] Oh, it's called bottom bracket!")
 
 
 # Features backlog
-- [ ] Multimodality. Bike component identifier (helps during repairs: "What is this part? [insert image] Oh, it's called bottom bracket!")
-  - [ ] Use RAG with database of common components
+- [ ] Use RAG with database of common components
 - [ ] Price estimation ("How much would a new chain cost for my bike?")
   - [ ] Can use LangChain/agents to retrieve online products
 - [ ] Analyse historical trends in my cycling data ("Plot of average cadence per week over the last year")

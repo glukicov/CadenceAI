@@ -4,21 +4,41 @@ import argparse
 import yaml
 
 from loguru import logger
+from llama_cpp import Llama
 
-# Parse command-line arguments
 parser = argparse.ArgumentParser(description="Send a query to the chat completion API.")
 parser.add_argument("--question", type=str, required=True, help="The question to ask.")
+parser.add_argument("--local_server", action='store_true', help="Send request to a local server")
+parser.add_argument("--local_model", action='store_true', help="Send request to a local model")
 args = parser.parse_args()
 
 config = yaml.safe_load(open("config.yaml"))
 
 HEADERS = {"Content-Type": "application/json"}
 BASE_URL = config['base_url']
+if args.local_server:
+    BASE_URL = 'http://localhost:1234'
+if args.local_model:
+    MODEL_PATH = config['model_path']
 API_ENDPOINT = config['api_endpoint']
 CONTENT = config['content']
 TEMPERATURE = config['temperature']
 MAX_TOKENS = config['max_tokens']
 STREAM = config['stream']
+
+
+def local_model_response(request: str) -> str:
+    model = Llama(model_path=MODEL_PATH)
+
+    prompt = f"""
+    <s>[INST] <<SYS>>
+    {CONTENT}
+    <</SYS>>
+    {request} [/INST]
+    """
+
+    output = model(prompt=prompt, temperature=TEMPERATURE, max_tokens=MAX_TOKENS, stream=STREAM)
+    return output
 
 
 def generate_response(request: str) -> str:
@@ -43,5 +63,8 @@ def generate_response(request: str) -> str:
 
 
 if __name__ == "__main__":
-    api_response = generate_response(args.question)
+    if args.local_model:
+        api_response = local_model_response(request=args.question)
+    else:
+        api_response = generate_response(request=args.question)
     logger.info(api_response)
