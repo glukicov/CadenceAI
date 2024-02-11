@@ -12,21 +12,24 @@ RUN apt-get install python3-dev build-essential gcc clang clang-tools cmake libc
 RUN pip install --upgrade pip
 RUN pip install "poetry==1.7.1"
 
-# Add a volume and set as working directory
-WORKDIR /api
-RUN mkdir -p /api/artifacts
+# TODO
+## Add a volume and set as working directory
+#WORKDIR /api
+#
+### Copy poetry files and appplication files
+#COPY ./poetry.lock ./poetry.lock
+#COPY ./pyproject.toml ./pyproject.toml
+#COPY ./README.md ./README.md
+#COPY ./server_code/llm_server.py ./sever_code/llm_server.py
+# Copy misc files
+#COPY ./config.yaml ./config.yaml
+#COPY ./artifacts/llama-2-7b-chat.Q2_K.gguf /api/artifacts/llama-2-7b-chat.Q2_K.gguf
 
-## Copy poetry files
-COPY ./poetry.lock poetry.lock
-COPY ./pyproject.toml pyproject.toml
+# TODO
+COPY . ./
 
 # DEV: Poetry venv wit test dependecies TODO
 RUN poetry install
-
-# Copy appplication files
-COPY ./config.yaml config.yaml
-COPY ./server_code/llm_server.py /api/llm_server.py
-COPY ./artifacts/llama-2-7b-chat.Q2_K.gguf /api/artifacts/llama-2-7b-chat.Q2_K.gguf
 
 # DEV: run a single uvicorn worker with live-reload for code mounted via `volumes` in docker-compose.yml
 CMD exec poetry run uvicorn server_code.llm_server:api --reload --host 0.0.0.0 --port 8080

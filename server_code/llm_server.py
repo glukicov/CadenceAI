@@ -5,6 +5,7 @@ import yaml
 from fastapi import FastAPI, Response, Request
 from llama_cpp import Llama
 from pydantic import BaseModel
+from loguru import logger
 
 config = yaml.safe_load(open("config.yaml"))
 APP_NAME = config["app_name"]
@@ -71,6 +72,7 @@ async def process_request(request: Request) -> Response:
                        temperature=request_data.temperature,
                        max_tokens=request_data.max_tokens,
                        stream=request_data.stream)
+        logger.info(f"Output: {output}")
         return Response(content=json.dumps(output), status_code=200)
 
     except Exception as e:

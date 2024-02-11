@@ -1,6 +1,6 @@
 app_name: "CadenceAI"
 base_url: "0.0.0.0"
-port: 8081
+port: 8080
 api_endpoint: "/v1/question"
 model_path: "artifacts/llama-2-7b-chat.Q2_K.gguf"
 content: "You are a friendly cycling coach. You always provide well-reasoned answers that are both correct and helpful."
