@@ -34,6 +34,12 @@ and send a query to the server
 python server_code/send_llm_query.py --question="How often should I change my chain?" --local_server
 ```
 
+### Remote server
+Build a container 
+```shell
+APP_NAME="CadenceAI" PORT="1234" MODEL_PATH="./artifacts/llama-2-7b-chat.Q2_K.gguf" docker-compose up --build api
+```
+
 ### Vision model in GCP
 ```shell
 python server_code/send_vision_query.py

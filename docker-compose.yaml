@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  api:
+    container_name: ${APP_NAME}
+    build:
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "${PORT}:${PORT}"
+    environment:
+      - PORT=${PORT}
+      - MODEL_PATH=${MODEL_PATH}
+    volumes:
+      - ./server_code:/api/server_code

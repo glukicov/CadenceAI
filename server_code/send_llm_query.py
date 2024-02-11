@@ -55,9 +55,10 @@ def generate_response(request: str,
 
     if response.status_code == 200:
         response_data = response.json()
-        print("response_data", response_data)
-        for message in response_data["choices"]:
-            return message["message"]["content"]
+        full_response = ''
+        for choices in response_data['choices']:
+            full_response += choices['text']
+        return full_response
     else:
         return f"Error: API request failed with status code {response.status_code}"
 
