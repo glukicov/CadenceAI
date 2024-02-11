@@ -26,10 +26,10 @@ RUN poetry install
 # Copy appplication files
 COPY ./config.yaml config.yaml
 COPY ./server_code/llm_server.py /api/llm_server.py
-COPY ./artifacts/zephyr-7b-beta.Q4_K_S.gguf /api/artifacts/zephyr-7b-beta.Q4_K_S.gguf
+COPY ./artifacts/llama-2-7b-chat.Q2_K.gguf /api/artifacts/llama-2-7b-chat.Q2_K.gguf
 
 # DEV: run a single uvicorn worker with live-reload for code mounted via `volumes` in docker-compose.yml
-CMD exec poetry run uvicorn server_code.llm_server:api --reload --host 0.0.0.0 --port ${PORT}
+CMD exec poetry run uvicorn server_code.llm_server:api --reload --host 0.0.0.0 --port 8080
 
 # expose container port
-EXPOSE ${PORT}
+EXPOSE 8080

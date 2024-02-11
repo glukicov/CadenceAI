@@ -39,11 +39,11 @@ Build a container
 ```shell
 APP_NAME="CadenceAI" PORT="8081" docker-compose up --build api
 ```
-and send a query to the server's container 
+and send a query to the locally running server's container 
 ```shell
 python server_code/send_llm_query.py --question="How often should I change my chain?"
 ```
-
+Tag and push to AWS ECR  as `cadence-ai:latest`, and deploy the container to App Runner.
 
 ### Vision model in GCP
 ```shell
