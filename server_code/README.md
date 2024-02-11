@@ -10,6 +10,12 @@
 - "acceptable" quality for a PoC
 
 ## Local testing 
+Install dependencies
+```shell
+poetry install && poetry shell
+```
+Check `config.yaml` for model configuration, download models and create some test images in `artifacts/` then:
+
 Inference on a GGUF model file on disk 
 ```shell
 python server_code/send_llm_query.py --question="How often should I change my chain?" --local_model
@@ -21,15 +27,22 @@ As a general guideline, you should replace your bike chain every 2,000 to 3,000 
 ### Local server
 Start a local server at http://localhost:1234
 ```shell
-python server_code/llm_server.py
+poetry run uvicorn server_code.llm_server:api --reload --host 0.0.0.0 --port 1234
 ```
 and send a query to the server
 ```shell
 python server_code/send_llm_query.py --question="How often should I change my chain?" --local_server
 ```
 
+### Vision model in GCP
+```shell
+python server_code/send_vision_query.py
+```
+Should give a response like
+```text
+This is a spacer for a bicycle disc brake caliper.
+```
 
 # Deployment
 
-## HuggingFace
 

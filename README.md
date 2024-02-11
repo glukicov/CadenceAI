@@ -12,14 +12,14 @@ Introducing - `Cadence AI`, your all-in-one AI-powered cycling coach, mechanic, 
 
 
 # MVP1
+- [x] General Q&A ("How of often should I change my chain?")
+- [x] Bike component identifier ("What is this part? [insert image] It's called bottom bracket!")
 
 ## Features in progress
-- [ ] Anvil BE <-> FE pretty form app with text submission and response display 
+- [ ] Anvil BE <-> FE pretty form app with text submission and response display~ 
 - [ ] BE: Deploy Zephyr into public Cloud Run instance with auth
-- [ ] Feature 1: General Q&A ("How of often should I change my chain?")
 - [ ] FE: Deploy Anvil app to Compute Engine 
-- [ ] Test e2e mobile usability and get early feedback   
-- [ ] Multimodality (GeminiPro Vision API call) Bike component identifier (helps during repairs: "What is this part? [insert image] Oh, it's called bottom bracket!")
+- [ ] Test e2e mobile usability and get early feedback
 
 <p align="center">
 <img src="docs/img/mvp1.png">
@@ -46,4 +46,12 @@ You can contact me for collaborations ideas at https://glukicov.github.io/
 
 # Engineering backlog
 - [ ] Add [Pkl](https://pkl-lang.org/blog/introducing-pkl.html) for config validation
+- [ ] Config class 
+- [ ] Linting 
+- [ ] Tests (unit and e2e)
+- [ ] Test coverage 
 - [ ] CI/CD for deployment and testing
+- [ ] Semantic versioning 
+- [ ] pre-commit hooks (linting)
+- [ ] API documentation (Sphinx)
+- [ ] DVC for artifacts 
