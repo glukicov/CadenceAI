@@ -17,6 +17,6 @@ vision_temperature: 0.4
 vision_top_p: 1
 vision_top_k: 32
 vision_stream: True
-img_path: "artifacts/img2.jpg"
+img_path: "artifacts/IMG_4107.jpg"
 img_type: "image/jpeg"
 

@@ -9,6 +9,10 @@
 # Contact 
 You can contact me for collaborations ideas at https://glukicov.github.io/
 
+# MVP1
+<p align="center">
+<img src="docs/img/mvp1.png" height="500">
+</p>
 
 # MVP features in progress
 - [ ] Anvil BE <-> FE pretty form app with text submission and response display 
@@ -20,16 +24,19 @@ You can contact me for collaborations ideas at https://glukicov.github.io/
 
 
 # Features backlog
-- [ ] Use RAG with database of common components
+- [ ] Use RAG with a database of common cycling questions and answers
+- [ ] Caching 
 - [ ] Price estimation ("How much would a new chain cost for my bike?")
   - [ ] Can use LangChain/agents to retrieve online products
 - [ ] Analyse historical trends in my cycling data ("Plot of average cadence per week over the last year")
-  - [ ] Use Strava data locally
-  - [ ] Upload and process Stava on the cloud (GCS/Dataflow)
+  - [ ] Use Strava API to retrieve athlete's data (one-off)
 - [ ] Dashboards with all trends
-  - [ ] Sync/hook to Strava 
+  - [ ] Sync with athlete's Strava 
 - [ ] Cycling coach to suggest exercises to improve the trends
 - [ ] Dietitian to suggest nutrition plans 
+- [ ] Recommend components to upgrade or buy 
+  - [ ] Add athlete's bike into profile   
 
 # Engineering backlog
-- [ ] Add [Pkl](https://pkl-lang.org/blog/introducing-pkl.html) for config validation 
+- [ ] Add [Pkl](https://pkl-lang.org/blog/introducing-pkl.html) for config validation
+- [ ] CI/CD for deployment and testing
