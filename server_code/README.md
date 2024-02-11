@@ -25,9 +25,9 @@ Should give a response like
 As a general guideline, you should replace your bike chain every 2,000 to 3,000 miles (3,200 to 4,800 kilometers) of use. However, this can vary depending on several factors such as riding conditions, maintenance habits, and the specific brand and type of chain you have. If you ride frequently in harsh weather conditions or on rough terrain, you may need to replace your chain more often. On the other hand, if you're a recreational rider who mostly rides on smooth roads and keeps up with regular cleaning and lubrication, your chain might last longer. It's always best to consult the manufacturer's recommendations for specific advice based on your particular setup. By replacing your chain at appropriate intervals, you can help ensure optimal performance, efficiency, and longevity of your bike drivetrain.
 ```
 ### Local server
-Start a local server at http://localhost:1234
+Start a local server at http://localhost:8081
 ```shell
-poetry run uvicorn server_code.llm_server:api --reload --host 0.0.0.0 --port 1234
+poetry run uvicorn server_code.llm_server:api --reload --host 0.0.0.0 --port 8081
 ```
 and send a query to the server
 ```shell
@@ -37,8 +37,13 @@ python server_code/send_llm_query.py --question="How often should I change my ch
 ### Remote server
 Build a container 
 ```shell
-APP_NAME="CadenceAI" PORT="1234" MODEL_PATH="./artifacts/llama-2-7b-chat.Q2_K.gguf" docker-compose up --build api
+APP_NAME="CadenceAI" PORT="8081" docker-compose up --build api
 ```
+and send a query to the server's container 
+```shell
+python server_code/send_llm_query.py --question="How often should I change my chain?"
+```
+
 
 ### Vision model in GCP
 ```shell

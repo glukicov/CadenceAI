@@ -47,7 +47,8 @@ You can contact me for collaborations ideas at https://glukicov.github.io/
 # Engineering backlog
 - [ ] Add [Pkl](https://pkl-lang.org/blog/introducing-pkl.html) for config validation
 - [ ] Seperate BE and FE in pyproject.toml
-- [ ] Pass vars to docker-compose from config.yaml
+- [ ] Pass all vars (e.g. `MODEL_PATH`) to docker-compose from config.yaml
+- [ ] Add HTTPS/TLS and other security layers 
 - [ ] Config class 
 - [ ] Linting 
 - [ ] Tests (unit and e2e)
