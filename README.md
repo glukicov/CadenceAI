@@ -4,7 +4,7 @@
 <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue">
 </p>
 
-### `CadenceAI`: Your all-in-one AI-powered cycling coach, mechanic, analyst and dietitian 🚴🏻‍♀🤖️🚴‍♂
+### `CadenceAI`: Your AI-powered cycling companion 🚴🏻‍♀🤖️🚴‍♂
 Did you know there are over 1 billion bicycles in the world? The cycling industry is entirely commoditised.
 However, **helpful** and **personalised** advice on training, repair and nutrition is out of reach for most people. 
 
