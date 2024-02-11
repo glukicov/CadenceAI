@@ -41,14 +41,31 @@ APP_NAME="CadenceAI" PORT="8080" docker-compose up --build api
 ```
 or 
 ```shell
-docker build -t cadence-ai . &&
-docker run -p 127.0.0.1:8080:8080/tcp cadence-ai
+docker build -t cadenceai-api . &&
+docker run -p 127.0.0.1:8080:8080/tcp cadenceai-api
 ```
-and send a query to the locally running server's container 
+and send a query to the locally running server's container for health
+```shell
+curl -X 'GET' \                                                                                                          INT ✘  3.10.12  
+  'http://127.0.0.1:8080/health' \
+  -H 'accept: application/json'
+```
+or model endpoint
 ```shell
 python server_code/send_llm_query.py --question="How often should I change my chain?"
 ```
-Tag and push to AWS ECR  as `cadence-ai:latest`, and deploy the container to App Runner.
+Tag and push to AWS ECR
+```shell
+docker tag cadenceai-api:latest 851725196496.dkr.ecr.eu-west-2.amazonaws.com/cadence-ai:latest &&
+docker push 851725196496.dkr.ecr.eu-west-2.amazonaws.com/cadence-ai:latest
+````
+or GCP Cloud Run, 
+```shell
+docker tag cadenceai-api europe-west2-docker.pkg.dev/calm-catfish-302511/cadence-ai/cadence-ai:latest &&
+docker push europe-west2-docker.pkg.dev/calm-catfish-302511/cadence-ai/cadence-ai:latest
+```
+
+and deploy the container to App Runner.
 
 ### Vision model in GCP
 ```shell
