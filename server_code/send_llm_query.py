@@ -69,5 +69,5 @@ if __name__ == "__main__":
     if args.local_server:
         api_response = generate_response(request=args.question, base_url="http://127.0.0.1")
     else:
-        api_response = generate_response(request=args.question, base_url=f"http://{BASE_URL}")
+        api_response = generate_response(request=args.question, base_url=f"https://{BASE_URL}")
     logger.info(api_response)

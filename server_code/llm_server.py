@@ -14,6 +14,7 @@ BASE_URL = config["base_url"]
 PORT = config["port"]
 MODEL_PATH = config["model_path"]
 N_GPU_LAYERS = config['n_gpu_layers']
+N_THREADS = config['n_threads']
 
 EXPECTED_PARAMS = ("temperature", "max_tokens", "stream")
 
@@ -63,7 +64,7 @@ async def process_request(request: Request) -> Response:
         request_body = await request.body()
         request_data = RequestData(**json.loads(request_body))
         if model is None:
-            model = Llama(model_path=MODEL_PATH, n_gpu_layers=N_GPU_LAYERS)
+            model = Llama(model_path=MODEL_PATH, n_gpu_layers=N_GPU_LAYERS, n_threads=N_THREADS)
 
         prompt = create_llama_prompt(content=request_data.system_content,
                                      user_msg=request_data.user_content)

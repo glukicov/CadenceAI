@@ -1,3 +1,4 @@
+import argparse
 import pathlib
 import yaml
 
@@ -18,8 +19,15 @@ IMG_PATH = config["img_path"]
 IMG_TYPE = config['img_type']
 
 
-def get_image() -> Part:
-    image_bytes = pathlib.Path(IMG_PATH).read_bytes()
+def create_parser() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Send a vision request to a server.")
+    parser.add_argument("--img_path", type=str, default=IMG_PATH,
+                        help="Send request to a local server")
+    return parser.parse_args()
+
+
+def get_image(img_path: str = IMG_PATH) -> Part:
+    image_bytes = pathlib.Path(img_path).read_bytes()
     part_image = Part.from_data(data=image_bytes, mime_type=IMG_TYPE)
     return part_image
 
@@ -53,6 +61,7 @@ def generate(input_image, vision_content: str = VISION_CONTENT) -> List[str]:
 
 
 if __name__ == "__main__":
-    image = get_image()
+    args = create_parser()
+    image = get_image(img_path=args.img_path)
     api_response = generate(input_image=image)
     logger.info(api_response)

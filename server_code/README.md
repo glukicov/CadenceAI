@@ -43,6 +43,7 @@ or
 ```shell
 docker build -t cadenceai-api . &&
 docker run -p 127.0.0.1:8080:8080/tcp cadenceai-api
+(CB cmd: `gcloud builds submit --tag europe-west2-docker.pkg.dev/calm-catfish-302511/cadence-ai/cadence-ai:latest`)
 ```
 and send a query to the locally running server's container for health
 ```shell
