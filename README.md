@@ -22,7 +22,7 @@ Introducing - `Cadence AI`, your all-in-one AI-powered cycling coach, mechanic, 
 - [ ] Test e2e mobile usability and get early feedback
 
 <p align="center">
-<img src="docs/img/mvp1.png">
+<img src="docs/img/mvp1.jpeg">
 </p>
 
 # Contact 
