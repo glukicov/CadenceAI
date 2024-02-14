@@ -14,11 +14,11 @@ Introducing - `Cadence AI`, your all-in-one AI-powered cycling coach, mechanic, 
 # MVP1
 - [x] General Q&A ("How of often should I change my chain?")
 - [x] Bike component identifier ("What is this part? [insert image] It's called bottom bracket!")
+- [x] BE: Deploy OSS LMM Zephyr into  Cloud Run & App Runner
 
 ## Features in progress
-- [ ] Anvil BE <-> FE pretty form app with text submission and response display~ 
-- [ ] BE: Deploy Zephyr into public Cloud Run instance with auth
-- [ ] FE: Deploy Anvil app to Compute Engine 
+- [ ] FE: Deploy Anvil app to Compute Engine & EC2
+- [ ] Anvil BE <-> FE app with text submission and response display
 - [ ] Test e2e mobile usability and get early feedback
 
 <p align="center">
@@ -46,7 +46,7 @@ You can contact me for collaborations ideas at https://glukicov.github.io/
 
 # Engineering backlog
 - [ ] Add [Pkl](https://pkl-lang.org/blog/introducing-pkl.html) for config validation
-- [ ] Seperate BE and FE in pyproject.toml
+- [ ] Separate BE and FE in pyproject.toml
 - [ ] Pass all vars (e.g. `MODEL_PATH`) to docker-compose from config.yaml
 - [ ] Add HTTPS/TLS and other security layers 
 - [ ] Config class 
