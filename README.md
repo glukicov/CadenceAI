@@ -33,6 +33,7 @@ You can contact me for collaborations ideas at https://glukicov.github.io/
   - [ ] Use LangChain/agents to retrieve and show online products
 - [ ] Fine-tune the OSS LMM model (improve general Q&A) 
 - [ ] Use RAG with a database of common cycling questions and answers
+  - [ ] vector search in BigQuery
 - [ ] Caching for recently answered questions (consider safety)
 - [ ] Defensive UX
 - [ ] Analyse historical trends in my cycling data ("Plot of average cadence per week over the last year")
