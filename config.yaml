@@ -27,10 +27,9 @@ img_type: "image/jpeg"
 chat_model: "gpt-3.5-turbo-1106"
 chat_content: ""
 
-
 #chat_model: "gpt-3.5-turbo-1106"
 #chat_content: "You are a friendly cycling coach. You always provide well-reasoned answers that are both correct and helpful. You provide short and concise answers."
-#
+
 #chat_model: "ft:gpt-3.5-turbo-1106:personal::8tfxMnXE"
 #chat_content: ""
 
